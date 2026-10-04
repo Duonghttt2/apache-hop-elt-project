@@ -1,0 +1,666 @@
+===[Environment Settings - hop-run.bat]===================================
+
+Java identified as "C:\Program Files\Eclipse Adoptium\jdk-25.0.4.101-hotspot\bin\java"
+
+HOP_OPTIONS="-Xmx2048m" -DHOP_AUDIT_FOLDER=.\audit -DHOP_PLATFORM_OS=Windows -DHOP_PLATFORM_RUNTIME=Run -DHOP_AUTO_CREATE_CONFIG=Y --add-opens java.xml/jdk.xml.internal=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.invoke=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/sun.security.action=ALL-UNNAMED --add-opens java.base/sun.util.calendar=ALL-UNNAMED --add-opens java.security.jgss/sun.security.krb5=ALL-UNNAMED --add-exports java.base/sun.nio.ch=ALL-UNNAMED
+
+
+Consolidated parameters to pass to HopRun are
+--project "etl-project_1" -r local -f "D:\apache-hop-project\Workflows\03_data_workflow.hwf" -l Basic
+
+Command to start HopRun will be:
+"C:\Program Files\Eclipse Adoptium\jdk-25.0.4.101-hotspot\bin\java" -classpath lib\core\*;lib\spark-client\*;lib\swt\win64\* -Djava.library.path=lib\core "-Xmx2048m" -DHOP_AUDIT_FOLDER=.\audit -DHOP_PLATFORM_OS=Windows -DHOP_PLATFORM_RUNTIME=Run -DHOP_AUTO_CREATE_CONFIG=Y --add-opens java.xml/jdk.xml.internal=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.invoke=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/sun.security.action=ALL-UNNAMED --add-opens java.base/sun.util.calendar=ALL-UNNAMED --add-opens java.security.jgss/sun.security.krb5=ALL-UNNAMED --add-exports java.base/sun.nio.ch=ALL-UNNAMED org.apache.hop.run.HopRun --project "etl-project_1" -r local -f "D:\apache-hop-project\Workflows\03_data_workflow.hwf" -l Basic
+
+===[Starting HopRun]=========================================================
+WARNING: package sun.security.action not in java.base
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/C:/hop/lib/core/guava-33.3.1-jre.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+2026/10/02 08:34:56 - HopRun - Enabling project 'etl-project_1'
+2026/10/02 08:34:56 - HopRun - Two-way password encoder initialized with plugin ID 'Hop' for project 'etl-project_1'
+2026/10/02 08:34:56 - HopRun - Starting workflow: D:\apache-hop-project\Workflows\03_data_workflow.hwf
+2026/10/02 08:34:56 - 03_data_workflow - Start of workflow execution
+2026/10/02 08:34:56 - 03_data_workflow - Starting action [Start]
+2026/10/02 08:34:56 - 03_data_workflow - Finished action [Start] (result=[true])
+2026/10/02 08:34:56 - 03_data_workflow - Starting action [Checks if files exist]
+2026/10/02 08:34:58 - 03_data_workflow - Finished action [Checks if files exist] (result=[true])
+2026/10/02 08:34:58 - 03_data_workflow - Starting action [01_drive_staging.hpl]
+2026/10/02 08:34:58 - 01_drive_staging.hpl - Using run configuration [local]
+2026/10/02 08:34:58 - 01_drive_staging - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
+2026/10/02 08:34:58 - 01_drive_staging - Execution started for pipeline [01_drive_staging]
+2026/10/02 08:34:59 - staging_orders.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 08:34:59 - staging_product.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 08:34:59 - staging_customer.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 08:35:01 - product_excel.0 - Finished processing (I=10, O=0, R=0, W=10, U=0, E=0)
+2026/10/02 08:35:01 - Filter rows 2.0 - Finished processing (I=0, O=0, R=10, W=9, U=0, E=0)
+2026/10/02 08:35:01 - Orders_excel.0 - Finished processing (I=16, O=0, R=0, W=16, U=0, E=0)
+2026/10/02 08:35:01 - data_clean 2.0 - Finished processing (I=0, O=0, R=9, W=9, U=0, E=0)
+2026/10/02 08:35:01 - Filter rows 2 2.0 - Finished processing (I=0, O=0, R=16, W=16, U=0, E=0)
+2026/10/02 08:35:01 - customer_excel.0 - Finished processing (I=11, O=0, R=0, W=11, U=0, E=0)
+2026/10/02 08:35:01 - Filter rows.0 - Finished processing (I=0, O=0, R=11, W=11, U=0, E=0)
+2026/10/02 08:35:01 - data_error.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2026/10/02 08:35:01 - data_clean 2 2.0 - Finished processing (I=0, O=0, R=16, W=16, U=0, E=0)
+2026/10/02 08:35:01 - data_clean.0 - Finished processing (I=0, O=0, R=10, W=10, U=0, E=0)
+2026/10/02 08:35:01 - staging_product.0 - Finished processing (I=0, O=9, R=9, W=9, U=0, E=0)
+2026/10/02 08:35:01 - staging_customer.0 - Finished processing (I=0, O=10, R=10, W=10, U=0, E=0)
+2026/10/02 08:35:01 - staging_orders.0 - Finished processing (I=0, O=16, R=16, W=16, U=0, E=0)
+2026/10/02 08:35:01 - 01_drive_staging - Pipeline duration : 3.094 seconds [  3.094" ]
+2026/10/02 08:35:01 - 01_drive_staging - Execution finished on a local pipeline engine with run configuration 'local'
+2026/10/02 08:35:01 - 03_data_workflow - Finished action [01_drive_staging.hpl] (result=[true])
+2026/10/02 08:35:01 - 03_data_workflow - Starting action [02_db_staging.hpl]
+2026/10/02 08:35:02 - 02_db_staging.hpl - Using run configuration [local]
+2026/10/02 08:35:02 - 02_db_staging - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
+2026/10/02 08:35:02 - 02_db_staging - Execution started for pipeline [02_db_staging]
+2026/10/02 08:35:02 - clean_customer.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 08:35:02 - clean_orders.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 08:35:02 - clean_product.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 08:35:02 - input_product.0 - Finished reading query, closing connection.
+2026/10/02 08:35:02 - input_orders.0 - Finished reading query, closing connection.
+2026/10/02 08:35:02 - input_customer.0 - Finished reading query, closing connection.
+2026/10/02 08:35:02 - input_product.0 - Finished processing (I=9, O=0, R=0, W=9, U=0, E=0)
+2026/10/02 08:35:02 - input_orders.0 - Finished processing (I=16, O=0, R=0, W=16, U=0, E=0)
+2026/10/02 08:35:02 - input_customer.0 - Finished processing (I=10, O=0, R=0, W=10, U=0, E=0)
+2026/10/02 08:35:02 - filter_email.0 - Finished processing (I=0, O=0, R=10, W=10, U=0, E=0)
+2026/10/02 08:35:02 - filter_quantity.0 - Finished processing (I=0, O=0, R=16, W=16, U=0, E=0)
+2026/10/02 08:35:02 - filter_age.0 - Finished processing (I=0, O=0, R=8, W=8, U=0, E=0)
+2026/10/02 08:35:02 - log_emaii.0 - 
+2026/10/02 08:35:02 - log_emaii.0 - ------------> Linenr 1------------------------------
+2026/10/02 08:35:02 - log_emaii.0 - [ERROR] - Phat hien khach hang co dinh dang email khong dung
+2026/10/02 08:35:02 - log_emaii.0 - 
+2026/10/02 08:35:02 - log_emaii.0 - customerid = C002
+2026/10/02 08:35:02 - log_emaii.0 - fullname = Bob Jones
+2026/10/02 08:35:02 - log_emaii.0 - email = bob.example.com
+2026/10/02 08:35:02 - log_emaii.0 - phone = 555-0102
+2026/10/02 08:35:02 - log_emaii.0 - age = 34
+2026/10/02 08:35:02 - log_emaii.0 - 
+2026/10/02 08:35:02 - log_emaii.0 - ====================
+2026/10/02 08:35:02 - log_quantity.0 - 
+2026/10/02 08:35:02 - log_quantity.0 - ------------> Linenr 1------------------------------
+2026/10/02 08:35:02 - log_quantity.0 - [ERROR] - Phat hien don hang sai dinh dang so luong 
+2026/10/02 08:35:02 - log_quantity.0 - 
+2026/10/02 08:35:02 - log_quantity.0 - orderid = O005
+2026/10/02 08:35:02 - log_quantity.0 - customerid = C005
+2026/10/02 08:35:02 - log_quantity.0 - productid = P008
+2026/10/02 08:35:02 - log_quantity.0 - orderdate = 2023/01/19 00:00:00.000
+2026/10/02 08:35:02 - log_quantity.0 - quantity = -2
+2026/10/02 08:35:02 - log_quantity.0 - totalamount = -120,0
+2026/10/02 08:35:02 - log_quantity.0 - 
+2026/10/02 08:35:02 - log_quantity.0 - ====================
+2026/10/02 08:35:02 - log_customer.0 - 
+2026/10/02 08:35:02 - log_customer.0 - ------------> Linenr 1------------------------------
+2026/10/02 08:35:02 - log_customer.0 - [ERROR] - Phat hien khach hang co ma dinh danh trung nhau
+2026/10/02 08:35:02 - log_customer.0 - 
+2026/10/02 08:35:02 - log_customer.0 - customerid = C001
+2026/10/02 08:35:02 - log_customer.0 - fullname = Grace Lee
+2026/10/02 08:35:02 - log_customer.0 - email = grace@example.com
+2026/10/02 08:35:02 - log_customer.0 - phone = 555-0107
+2026/10/02 08:35:02 - log_customer.0 - age = 29
+2026/10/02 08:35:02 - log_customer.0 - error_row = 1
+2026/10/02 08:35:02 - log_customer.0 - error_description = null
+2026/10/02 08:35:02 - log_customer.0 - error_code = UNRH001
+2026/10/02 08:35:02 - log_customer.0 - 
+2026/10/02 08:35:02 - log_customer.0 - ====================
+2026/10/02 08:35:02 - log_quantity.0 - 
+2026/10/02 08:35:02 - log_quantity.0 - ------------> Linenr 2------------------------------
+2026/10/02 08:35:02 - log_quantity.0 - [ERROR] - Phat hien don hang sai dinh dang so luong 
+2026/10/02 08:35:02 - log_quantity.0 - 
+2026/10/02 08:35:02 - log_quantity.0 - orderid = O013
+2026/10/02 08:35:02 - log_quantity.0 - customerid = C004
+2026/10/02 08:35:02 - log_quantity.0 - productid = P009
+2026/10/02 08:35:02 - log_quantity.0 - orderdate = 2023/01/27 00:00:00.000
+2026/10/02 08:35:02 - log_quantity.0 - quantity = 0
+2026/10/02 08:35:02 - log_quantity.0 - totalamount = 0,0
+2026/10/02 08:35:02 - log_quantity.0 - 
+2026/10/02 08:35:02 - log_quantity.0 - ====================
+2026/10/02 08:35:02 - log_age.0 - 
+2026/10/02 08:35:02 - log_age.0 - ------------> Linenr 1------------------------------
+2026/10/02 08:35:02 - log_age.0 - [ERROR]- Phat hien khach hang co tuoi khong hop le!
+
+2026/10/02 08:35:02 - log_age.0 - 
+2026/10/02 08:35:02 - log_age.0 - customerid = C005
+2026/10/02 08:35:02 - log_age.0 - fullname = Eve Davis
+2026/10/02 08:35:02 - log_age.0 - email = eve@example.com
+2026/10/02 08:35:02 - log_age.0 - phone = 555-0105
+2026/10/02 08:35:02 - log_age.0 - age = -5
+2026/10/02 08:35:02 - log_age.0 - 
+2026/10/02 08:35:02 - log_age.0 - ====================
+2026/10/02 08:35:02 - log_emaii.0 - 
+2026/10/02 08:35:02 - log_emaii.0 - ------------> Linenr 2------------------------------
+2026/10/02 08:35:02 - log_emaii.0 - [ERROR] - Phat hien khach hang co dinh dang email khong dung
+2026/10/02 08:35:02 - log_emaii.0 - 
+2026/10/02 08:35:02 - log_emaii.0 - customerid = c1
+2026/10/02 08:35:02 - log_emaii.0 - fullname = duong
+2026/10/02 08:35:02 - log_emaii.0 - email = duonggmail.com
+2026/10/02 08:35:02 - log_emaii.0 - phone = 111-1111
+2026/10/02 08:35:02 - log_emaii.0 - age = 20
+2026/10/02 08:35:02 - log_emaii.0 - 
+2026/10/02 08:35:02 - log_emaii.0 - ====================
+2026/10/02 08:35:02 - Unique rows (HashSet) 2.0 - Finished processing (I=0, O=0, R=7, W=6, U=0, E=2)
+2026/10/02 08:35:02 - log_emaii.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2026/10/02 08:35:02 - Calculator.0 - Finished processing (I=0, O=0, R=9, W=9, U=0, E=0)
+2026/10/02 08:35:02 - log_age.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2026/10/02 08:35:02 - log_quantity.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2026/10/02 08:35:02 - clean_customer.0 - Finished processing (I=0, O=6, R=6, W=6, U=0, E=0)
+2026/10/02 08:35:02 - log_customer.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2026/10/02 08:35:02 - Select values.0 - Finished processing (I=0, O=0, R=9, W=9, U=0, E=0)
+2026/10/02 08:35:02 - log_product.0 - 
+2026/10/02 08:35:02 - log_product.0 - ------------> Linenr 1------------------------------
+2026/10/02 08:35:02 - log_product.0 - [ERROR] - Phat hien don hang co truong du lieu trung nhau
+
+2026/10/02 08:35:02 - log_product.0 - 
+2026/10/02 08:35:02 - log_product.0 - productid = P001
+2026/10/02 08:35:02 - log_product.0 - productname = Monitor
+2026/10/02 08:35:02 - log_product.0 - category = Electronics
+2026/10/02 08:35:02 - log_product.0 - price = 300,0
+2026/10/02 08:35:02 - log_product.0 - error_row = 1
+2026/10/02 08:35:02 - log_product.0 - error_description = null
+2026/10/02 08:35:02 - log_product.0 - error_code = UNRH001
+2026/10/02 08:35:02 - log_product.0 - 
+2026/10/02 08:35:02 - log_product.0 - ====================
+2026/10/02 08:35:02 - Unique rows (HashSet).0 - Finished processing (I=0, O=0, R=9, W=8, U=0, E=2)
+2026/10/02 08:35:02 - log_product.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2026/10/02 08:35:02 - clean_product.0 - Finished processing (I=0, O=8, R=8, W=8, U=0, E=0)
+2026/10/02 08:35:02 - log_date.0 - 
+2026/10/02 08:35:02 - log_date.0 - ------------> Linenr 1------------------------------
+2026/10/02 08:35:02 - log_date.0 - [ERROR] - Phat hien don hang co dinh dang ngay thang khong hop le!
+2026/10/02 08:35:02 - log_date.0 - 
+2026/10/02 08:35:02 - log_date.0 - orderid = O002
+2026/10/02 08:35:02 - log_date.0 - customerid = C002
+2026/10/02 08:35:02 - log_date.0 - productid = P003
+2026/10/02 08:35:02 - log_date.0 - orderdate = 32/13/2026
+2026/10/02 08:35:02 - log_date.0 - quantity = 2
+2026/10/02 08:35:02 - log_date.0 - totalamount = 90,0
+2026/10/02 08:35:02 - log_date.0 - error_row = 1
+2026/10/02 08:35:02 - log_date.0 - error_description = 
+2026/10/02 08:35:02 - log_date.0 - 
+2026/10/02 08:35:02 - log_date.0 - orderdate String(50) : couldn't convert string [32/13/2026] to a date using format [yyyy/MM/dd] on offset location 10
+2026/10/02 08:35:02 - log_date.0 - 32/13/2026
+2026/10/02 08:35:02 - log_date.0 - 
+2026/10/02 08:35:02 - log_date.0 - 
+2026/10/02 08:35:02 - log_date.0 - error_code = SELECT001
+2026/10/02 08:35:02 - log_date.0 - 
+2026/10/02 08:35:02 - log_date.0 - ====================
+2026/10/02 08:35:02 - Select values 2.0 - ERROR: 
+2026/10/02 08:35:02 - Select values 2.0 - 
+2026/10/02 08:35:02 - Select values 2.0 - orderdate String(50) : couldn't convert string [32/13/2026] to a date using format [yyyy/MM/dd] on offset location 10
+2026/10/02 08:35:02 - Select values 2.0 - 32/13/2026
+2026/10/02 08:35:02 - Select values 2.0 - ERROR: 
+2026/10/02 08:35:02 - Select values 2.0 - 
+2026/10/02 08:35:02 - Select values 2.0 - orderdate String(50) : couldn't convert string [2023-02-29] to a date using format [yyyy/MM/dd] on offset location 4
+2026/10/02 08:35:02 - Select values 2.0 - 2023-02-29
+2026/10/02 08:35:02 - log_date.0 - 
+2026/10/02 08:35:02 - log_date.0 - ------------> Linenr 2------------------------------
+2026/10/02 08:35:02 - log_date.0 - [ERROR] - Phat hien don hang co dinh dang ngay thang khong hop le!
+2026/10/02 08:35:02 - log_date.0 - 
+2026/10/02 08:35:02 - log_date.0 - orderid = c1
+2026/10/02 08:35:02 - log_date.0 - customerid = c01
+2026/10/02 08:35:02 - log_date.0 - productid = P011
+2026/10/02 08:35:02 - log_date.0 - orderdate = 2023-02-29
+2026/10/02 08:35:02 - log_date.0 - quantity = 2
+2026/10/02 08:35:02 - log_date.0 - totalamount = 300,0
+2026/10/02 08:35:02 - log_date.0 - error_row = 1
+2026/10/02 08:35:02 - log_date.0 - error_description = 
+2026/10/02 08:35:02 - log_date.0 - 
+2026/10/02 08:35:02 - log_date.0 - orderdate String(50) : couldn't convert string [2023-02-29] to a date using format [yyyy/MM/dd] on offset location 4
+2026/10/02 08:35:02 - log_date.0 - 2023-02-29
+2026/10/02 08:35:02 - log_date.0 - 
+2026/10/02 08:35:02 - log_date.0 - 
+2026/10/02 08:35:02 - log_date.0 - error_code = SELECT001
+2026/10/02 08:35:02 - log_date.0 - 
+2026/10/02 08:35:02 - log_date.0 - ====================
+2026/10/02 08:35:02 - Select values 2.0 - Finished processing (I=0, O=0, R=14, W=12, U=0, E=2)
+2026/10/02 08:35:02 - clean_orders.0 - Finished processing (I=0, O=12, R=12, W=12, U=0, E=0)
+2026/10/02 08:35:02 - log_date.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2026/10/02 08:35:02 - 02_db_staging - Pipeline duration : 0.367 seconds [  0.367" ]
+2026/10/02 08:35:02 - 02_db_staging - Execution finished on a local pipeline engine with run configuration 'local'
+2026/10/02 08:35:02 - 03_data_workflow - Finished action [02_db_staging.hpl] (result=[true])
+2026/10/02 08:35:02 - 03_data_workflow - Starting action [Success]
+2026/10/02 08:35:02 - 03_data_workflow - Finished action [Success] (result=[true])
+2026/10/02 08:35:02 - 03_data_workflow - Workflow execution finished
+2026/10/02 08:35:02 - 03_data_workflow - Workflow duration : 5.542 seconds [  5.542" ]
+HopRun exit.
+===[Environment Settings - hop-run.bat]===================================
+
+Java identified as "C:\Program Files\Eclipse Adoptium\jdk-25.0.4.101-hotspot\bin\java"
+
+HOP_OPTIONS="-Xmx2048m" -DHOP_AUDIT_FOLDER=.\audit -DHOP_PLATFORM_OS=Windows -DHOP_PLATFORM_RUNTIME=Run -DHOP_AUTO_CREATE_CONFIG=Y --add-opens java.xml/jdk.xml.internal=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.invoke=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/sun.security.action=ALL-UNNAMED --add-opens java.base/sun.util.calendar=ALL-UNNAMED --add-opens java.security.jgss/sun.security.krb5=ALL-UNNAMED --add-exports java.base/sun.nio.ch=ALL-UNNAMED
+
+
+Consolidated parameters to pass to HopRun are
+--project "etl-project_1" -r local -f "D:\apache-hop-project\Workflows\03_data_workflow.hwf" -l Basic
+
+Command to start HopRun will be:
+"C:\Program Files\Eclipse Adoptium\jdk-25.0.4.101-hotspot\bin\java" -classpath lib\core\*;lib\spark-client\*;lib\swt\win64\* -Djava.library.path=lib\core "-Xmx2048m" -DHOP_AUDIT_FOLDER=.\audit -DHOP_PLATFORM_OS=Windows -DHOP_PLATFORM_RUNTIME=Run -DHOP_AUTO_CREATE_CONFIG=Y --add-opens java.xml/jdk.xml.internal=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.invoke=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/sun.security.action=ALL-UNNAMED --add-opens java.base/sun.util.calendar=ALL-UNNAMED --add-opens java.security.jgss/sun.security.krb5=ALL-UNNAMED --add-exports java.base/sun.nio.ch=ALL-UNNAMED org.apache.hop.run.HopRun --project "etl-project_1" -r local -f "D:\apache-hop-project\Workflows\03_data_workflow.hwf" -l Basic
+
+===[Starting HopRun]=========================================================
+WARNING: package sun.security.action not in java.base
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/C:/hop/lib/core/guava-33.3.1-jre.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+2026/10/02 08:57:08 - HopRun - Enabling project 'etl-project_1'
+2026/10/02 08:57:08 - HopRun - Two-way password encoder initialized with plugin ID 'Hop' for project 'etl-project_1'
+2026/10/02 08:57:08 - HopRun - Starting workflow: D:\apache-hop-project\Workflows\03_data_workflow.hwf
+2026/10/02 08:57:08 - 03_data_workflow - Start of workflow execution
+2026/10/02 08:57:08 - 03_data_workflow - Starting action [Start]
+2026/10/02 08:57:08 - 03_data_workflow - Finished action [Start] (result=[true])
+2026/10/02 08:57:08 - 03_data_workflow - Starting action [Checks if files exist]
+2026/10/02 08:57:10 - 03_data_workflow - Finished action [Checks if files exist] (result=[true])
+2026/10/02 08:57:10 - 03_data_workflow - Starting action [01_drive_staging.hpl]
+2026/10/02 08:57:10 - 01_drive_staging.hpl - Using run configuration [local]
+2026/10/02 08:57:10 - 01_drive_staging - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
+2026/10/02 08:57:10 - 01_drive_staging - Execution started for pipeline [01_drive_staging]
+2026/10/02 08:57:11 - staging_customer.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 08:57:11 - staging_orders.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 08:57:11 - staging_product.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 08:57:12 - product_excel.0 - Finished processing (I=10, O=0, R=0, W=10, U=0, E=0)
+2026/10/02 08:57:12 - customer_excel.0 - Finished processing (I=11, O=0, R=0, W=11, U=0, E=0)
+2026/10/02 08:57:12 - Filter rows 2.0 - Finished processing (I=0, O=0, R=10, W=9, U=0, E=0)
+2026/10/02 08:57:12 - Orders_excel.0 - Finished processing (I=16, O=0, R=0, W=16, U=0, E=0)
+2026/10/02 08:57:12 - Filter rows.0 - Finished processing (I=0, O=0, R=11, W=11, U=0, E=0)
+2026/10/02 08:57:12 - data_error.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2026/10/02 08:57:12 - data_clean 2.0 - Finished processing (I=0, O=0, R=9, W=9, U=0, E=0)
+2026/10/02 08:57:12 - Filter rows 2 2.0 - Finished processing (I=0, O=0, R=16, W=16, U=0, E=0)
+2026/10/02 08:57:12 - data_clean.0 - Finished processing (I=0, O=0, R=10, W=10, U=0, E=0)
+2026/10/02 08:57:12 - data_clean 2 2.0 - Finished processing (I=0, O=0, R=16, W=16, U=0, E=0)
+2026/10/02 08:57:12 - staging_customer.0 - Finished processing (I=0, O=10, R=10, W=10, U=0, E=0)
+2026/10/02 08:57:12 - staging_product.0 - Finished processing (I=0, O=9, R=9, W=9, U=0, E=0)
+2026/10/02 08:57:12 - staging_orders.0 - Finished processing (I=0, O=16, R=16, W=16, U=0, E=0)
+2026/10/02 08:57:12 - 01_drive_staging - Pipeline duration : 2.308 seconds [  2.308" ]
+2026/10/02 08:57:12 - 01_drive_staging - Execution finished on a local pipeline engine with run configuration 'local'
+2026/10/02 08:57:12 - 03_data_workflow - Finished action [01_drive_staging.hpl] (result=[true])
+2026/10/02 08:57:12 - 03_data_workflow - Starting action [02_db_staging.hpl]
+2026/10/02 08:57:12 - 02_db_staging.hpl - Using run configuration [local]
+2026/10/02 08:57:12 - 02_db_staging - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
+2026/10/02 08:57:12 - 02_db_staging - Execution started for pipeline [02_db_staging]
+2026/10/02 08:57:12 - clean_orders.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 08:57:12 - clean_product.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 08:57:12 - clean_customer.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 08:57:12 - input_customer.0 - Finished reading query, closing connection.
+2026/10/02 08:57:12 - input_product.0 - Finished reading query, closing connection.
+2026/10/02 08:57:12 - input_orders.0 - Finished reading query, closing connection.
+2026/10/02 08:57:12 - input_product.0 - Finished processing (I=9, O=0, R=0, W=9, U=0, E=0)
+2026/10/02 08:57:12 - input_orders.0 - Finished processing (I=16, O=0, R=0, W=16, U=0, E=0)
+2026/10/02 08:57:12 - input_customer.0 - Finished processing (I=10, O=0, R=0, W=10, U=0, E=0)
+2026/10/02 08:57:12 - filter_email.0 - Finished processing (I=0, O=0, R=10, W=10, U=0, E=0)
+2026/10/02 08:57:12 - log_emaii.0 - 
+2026/10/02 08:57:12 - log_emaii.0 - ------------> Linenr 1------------------------------
+2026/10/02 08:57:12 - log_emaii.0 - [ERROR] - Phat hien khach hang co dinh dang email khong dung
+2026/10/02 08:57:12 - log_emaii.0 - 
+2026/10/02 08:57:12 - log_emaii.0 - customerid = C002
+2026/10/02 08:57:12 - log_emaii.0 - fullname = Bob Jones
+2026/10/02 08:57:12 - log_emaii.0 - email = bob.example.com
+2026/10/02 08:57:12 - log_emaii.0 - phone = 555-0102
+2026/10/02 08:57:12 - log_emaii.0 - age = 34
+2026/10/02 08:57:12 - log_emaii.0 - 
+2026/10/02 08:57:12 - log_emaii.0 - ====================
+2026/10/02 08:57:12 - log_emaii.0 - 
+2026/10/02 08:57:12 - log_emaii.0 - ------------> Linenr 2------------------------------
+2026/10/02 08:57:12 - log_emaii.0 - [ERROR] - Phat hien khach hang co dinh dang email khong dung
+2026/10/02 08:57:12 - log_emaii.0 - 
+2026/10/02 08:57:12 - log_emaii.0 - customerid = c1
+2026/10/02 08:57:12 - log_emaii.0 - fullname = duong
+2026/10/02 08:57:12 - log_emaii.0 - email = duonggmail.com
+2026/10/02 08:57:12 - log_emaii.0 - phone = 111-1111
+2026/10/02 08:57:12 - log_emaii.0 - age = 20
+2026/10/02 08:57:12 - log_emaii.0 - 
+2026/10/02 08:57:12 - log_emaii.0 - ====================
+2026/10/02 08:57:12 - log_age.0 - 
+2026/10/02 08:57:12 - log_age.0 - ------------> Linenr 1------------------------------
+2026/10/02 08:57:12 - log_age.0 - [ERROR]- Phat hien khach hang co tuoi khong hop le!
+
+2026/10/02 08:57:12 - log_age.0 - 
+2026/10/02 08:57:12 - log_age.0 - customerid = C005
+2026/10/02 08:57:12 - log_age.0 - fullname = Eve Davis
+2026/10/02 08:57:12 - log_age.0 - email = eve@example.com
+2026/10/02 08:57:12 - log_age.0 - phone = 555-0105
+2026/10/02 08:57:12 - log_age.0 - age = -5
+2026/10/02 08:57:12 - log_age.0 - 
+2026/10/02 08:57:12 - log_age.0 - ====================
+2026/10/02 08:57:12 - log_quantity.0 - 
+2026/10/02 08:57:12 - log_quantity.0 - ------------> Linenr 1------------------------------
+2026/10/02 08:57:12 - log_quantity.0 - [ERROR] - Phat hien don hang sai dinh dang so luong 
+2026/10/02 08:57:12 - log_quantity.0 - 
+2026/10/02 08:57:12 - log_quantity.0 - orderid = O005
+2026/10/02 08:57:12 - log_quantity.0 - customerid = C005
+2026/10/02 08:57:12 - log_quantity.0 - productid = P008
+2026/10/02 08:57:12 - log_quantity.0 - orderdate = 2023/01/19 00:00:00.000
+2026/10/02 08:57:12 - log_quantity.0 - quantity = -2
+2026/10/02 08:57:12 - log_quantity.0 - totalamount = -120,0
+2026/10/02 08:57:12 - log_quantity.0 - 
+2026/10/02 08:57:12 - log_quantity.0 - ====================
+2026/10/02 08:57:12 - log_date.0 - 
+2026/10/02 08:57:12 - log_date.0 - ------------> Linenr 1------------------------------
+2026/10/02 08:57:12 - log_date.0 - [ERROR] - Phat hien don hang co dinh dang ngay thang khong hop le!
+2026/10/02 08:57:12 - log_date.0 - 
+2026/10/02 08:57:12 - log_date.0 - orderid = O002
+2026/10/02 08:57:12 - log_date.0 - customerid = C002
+2026/10/02 08:57:12 - log_date.0 - productid = P003
+2026/10/02 08:57:12 - log_date.0 - orderdate = 32/13/2026
+2026/10/02 08:57:12 - log_date.0 - quantity = 2
+2026/10/02 08:57:12 - log_date.0 - totalamount = 90,0
+2026/10/02 08:57:12 - log_date.0 - error_row = 1
+2026/10/02 08:57:12 - log_date.0 - error_description = 
+2026/10/02 08:57:12 - log_date.0 - 
+2026/10/02 08:57:12 - log_date.0 - orderdate String(50) : couldn't convert string [32/13/2026] to a date using format [yyyy/MM/dd] on offset location 10
+2026/10/02 08:57:12 - log_date.0 - 32/13/2026
+2026/10/02 08:57:12 - log_date.0 - 
+2026/10/02 08:57:12 - log_date.0 - 
+2026/10/02 08:57:12 - log_date.0 - error_code = SELECT001
+2026/10/02 08:57:12 - log_date.0 - 
+2026/10/02 08:57:12 - log_date.0 - ====================
+2026/10/02 08:57:12 - log_customer.0 - 
+2026/10/02 08:57:12 - log_customer.0 - ------------> Linenr 1------------------------------
+2026/10/02 08:57:12 - log_customer.0 - [ERROR] - Phat hien khach hang co ma dinh danh trung nhau
+2026/10/02 08:57:12 - log_customer.0 - 
+2026/10/02 08:57:12 - log_customer.0 - customerid = C001
+2026/10/02 08:57:12 - log_customer.0 - fullname = Grace Lee
+2026/10/02 08:57:12 - log_customer.0 - email = grace@example.com
+2026/10/02 08:57:12 - log_customer.0 - phone = 555-0107
+2026/10/02 08:57:12 - log_customer.0 - age = 29
+2026/10/02 08:57:12 - log_customer.0 - error_row = 1
+2026/10/02 08:57:12 - log_customer.0 - error_description = null
+2026/10/02 08:57:12 - log_customer.0 - error_code = UNRH001
+2026/10/02 08:57:12 - log_customer.0 - 
+2026/10/02 08:57:12 - log_customer.0 - ====================
+2026/10/02 08:57:12 - filter_age.0 - Finished processing (I=0, O=0, R=8, W=8, U=0, E=0)
+2026/10/02 08:57:12 - filter_quantity.0 - Finished processing (I=0, O=0, R=16, W=16, U=0, E=0)
+2026/10/02 08:57:12 - Select values 2.0 - ERROR: 
+2026/10/02 08:57:12 - Select values 2.0 - 
+2026/10/02 08:57:12 - Select values 2.0 - orderdate String(50) : couldn't convert string [32/13/2026] to a date using format [yyyy/MM/dd] on offset location 10
+2026/10/02 08:57:12 - Select values 2.0 - 32/13/2026
+2026/10/02 08:57:12 - log_age.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2026/10/02 08:57:12 - Select values 2.0 - ERROR: 
+2026/10/02 08:57:12 - Select values 2.0 - 
+2026/10/02 08:57:12 - Select values 2.0 - orderdate String(50) : couldn't convert string [2023-02-29] to a date using format [yyyy/MM/dd] on offset location 4
+2026/10/02 08:57:12 - Select values 2.0 - 2023-02-29
+2026/10/02 08:57:12 - log_quantity.0 - 
+2026/10/02 08:57:12 - log_quantity.0 - ------------> Linenr 2------------------------------
+2026/10/02 08:57:12 - log_quantity.0 - [ERROR] - Phat hien don hang sai dinh dang so luong 
+2026/10/02 08:57:12 - log_quantity.0 - 
+2026/10/02 08:57:12 - log_quantity.0 - orderid = O013
+2026/10/02 08:57:12 - log_quantity.0 - customerid = C004
+2026/10/02 08:57:12 - log_quantity.0 - productid = P009
+2026/10/02 08:57:12 - log_quantity.0 - orderdate = 2023/01/27 00:00:00.000
+2026/10/02 08:57:12 - log_quantity.0 - quantity = 0
+2026/10/02 08:57:12 - log_quantity.0 - totalamount = 0,0
+2026/10/02 08:57:12 - log_quantity.0 - 
+2026/10/02 08:57:12 - log_quantity.0 - ====================
+2026/10/02 08:57:12 - log_emaii.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2026/10/02 08:57:12 - log_date.0 - 
+2026/10/02 08:57:12 - log_date.0 - ------------> Linenr 2------------------------------
+2026/10/02 08:57:12 - log_date.0 - [ERROR] - Phat hien don hang co dinh dang ngay thang khong hop le!
+2026/10/02 08:57:12 - log_date.0 - 
+2026/10/02 08:57:12 - log_date.0 - orderid = c1
+2026/10/02 08:57:12 - log_date.0 - customerid = c01
+2026/10/02 08:57:12 - log_date.0 - productid = P011
+2026/10/02 08:57:12 - log_date.0 - orderdate = 2023-02-29
+2026/10/02 08:57:12 - log_date.0 - quantity = 2
+2026/10/02 08:57:12 - log_date.0 - totalamount = 300,0
+2026/10/02 08:57:12 - log_date.0 - error_row = 1
+2026/10/02 08:57:12 - log_date.0 - error_description = 
+2026/10/02 08:57:12 - log_date.0 - 
+2026/10/02 08:57:12 - log_date.0 - orderdate String(50) : couldn't convert string [2023-02-29] to a date using format [yyyy/MM/dd] on offset location 4
+2026/10/02 08:57:12 - log_date.0 - 2023-02-29
+2026/10/02 08:57:12 - log_date.0 - 
+2026/10/02 08:57:12 - log_date.0 - 
+2026/10/02 08:57:12 - log_date.0 - error_code = SELECT001
+2026/10/02 08:57:12 - log_date.0 - 
+2026/10/02 08:57:12 - log_date.0 - ====================
+2026/10/02 08:57:12 - Unique rows (HashSet) 2.0 - Finished processing (I=0, O=0, R=7, W=6, U=0, E=2)
+2026/10/02 08:57:12 - Calculator.0 - Finished processing (I=0, O=0, R=9, W=9, U=0, E=0)
+2026/10/02 08:57:12 - log_quantity.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2026/10/02 08:57:12 - log_customer.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2026/10/02 08:57:12 - Select values 2.0 - Finished processing (I=0, O=0, R=14, W=12, U=0, E=2)
+2026/10/02 08:57:12 - Select values.0 - Finished processing (I=0, O=0, R=9, W=9, U=0, E=0)
+2026/10/02 08:57:12 - log_product.0 - 
+2026/10/02 08:57:12 - log_product.0 - ------------> Linenr 1------------------------------
+2026/10/02 08:57:12 - log_product.0 - [ERROR] - Phat hien don hang co truong du lieu trung nhau
+
+2026/10/02 08:57:12 - log_product.0 - 
+2026/10/02 08:57:12 - log_product.0 - productid = P001
+2026/10/02 08:57:12 - log_product.0 - productname = Monitor
+2026/10/02 08:57:12 - log_product.0 - category = Electronics
+2026/10/02 08:57:12 - log_product.0 - price = 300,0
+2026/10/02 08:57:12 - log_product.0 - error_row = 1
+2026/10/02 08:57:12 - log_product.0 - error_description = null
+2026/10/02 08:57:12 - log_product.0 - error_code = UNRH001
+2026/10/02 08:57:12 - log_product.0 - 
+2026/10/02 08:57:12 - log_product.0 - ====================
+2026/10/02 08:57:12 - log_date.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2026/10/02 08:57:12 - Unique rows (HashSet).0 - Finished processing (I=0, O=0, R=9, W=8, U=0, E=2)
+2026/10/02 08:57:12 - log_product.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2026/10/02 08:57:12 - clean_orders.0 - Finished processing (I=0, O=12, R=12, W=12, U=0, E=0)
+2026/10/02 08:57:12 - clean_customer.0 - Finished processing (I=0, O=6, R=6, W=6, U=0, E=0)
+2026/10/02 08:57:12 - clean_product.0 - Finished processing (I=0, O=8, R=8, W=8, U=0, E=0)
+2026/10/02 08:57:12 - 02_db_staging - Pipeline duration : 0.276 seconds [  0.276" ]
+2026/10/02 08:57:12 - 02_db_staging - Execution finished on a local pipeline engine with run configuration 'local'
+2026/10/02 08:57:12 - 03_data_workflow - Finished action [02_db_staging.hpl] (result=[true])
+2026/10/02 08:57:13 - 03_data_workflow - Starting action [Success]
+2026/10/02 08:57:13 - 03_data_workflow - Finished action [Success] (result=[true])
+2026/10/02 08:57:13 - 03_data_workflow - Workflow execution finished
+2026/10/02 08:57:13 - 03_data_workflow - Workflow duration : 4.405 seconds [  4.405" ]
+HopRun exit.
+===[Environment Settings - hop-run.bat]===================================
+
+Java identified as "C:\Program Files\Eclipse Adoptium\jdk-25.0.4.101-hotspot\bin\java"
+
+HOP_OPTIONS="-Xmx2048m" -DHOP_AUDIT_FOLDER=.\audit -DHOP_PLATFORM_OS=Windows -DHOP_PLATFORM_RUNTIME=Run -DHOP_AUTO_CREATE_CONFIG=Y --add-opens java.xml/jdk.xml.internal=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.invoke=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/sun.security.action=ALL-UNNAMED --add-opens java.base/sun.util.calendar=ALL-UNNAMED --add-opens java.security.jgss/sun.security.krb5=ALL-UNNAMED --add-exports java.base/sun.nio.ch=ALL-UNNAMED
+
+
+Consolidated parameters to pass to HopRun are
+--project "etl-project_1" -r local -f "D:\apache-hop-project\Workflows\03_data_workflow.hwf" -l Basic
+
+Command to start HopRun will be:
+"C:\Program Files\Eclipse Adoptium\jdk-25.0.4.101-hotspot\bin\java" -classpath lib\core\*;lib\spark-client\*;lib\swt\win64\* -Djava.library.path=lib\core "-Xmx2048m" -DHOP_AUDIT_FOLDER=.\audit -DHOP_PLATFORM_OS=Windows -DHOP_PLATFORM_RUNTIME=Run -DHOP_AUTO_CREATE_CONFIG=Y --add-opens java.xml/jdk.xml.internal=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.invoke=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/java.nio=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED --add-opens java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.base/sun.nio.cs=ALL-UNNAMED --add-opens java.base/sun.security.action=ALL-UNNAMED --add-opens java.base/sun.util.calendar=ALL-UNNAMED --add-opens java.security.jgss/sun.security.krb5=ALL-UNNAMED --add-exports java.base/sun.nio.ch=ALL-UNNAMED org.apache.hop.run.HopRun --project "etl-project_1" -r local -f "D:\apache-hop-project\Workflows\03_data_workflow.hwf" -l Basic
+
+===[Starting HopRun]=========================================================
+WARNING: package sun.security.action not in java.base
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/C:/hop/lib/core/guava-33.3.1-jre.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+2026/10/02 09:16:45 - HopRun - Enabling project 'etl-project_1'
+2026/10/02 09:16:45 - HopRun - Two-way password encoder initialized with plugin ID 'Hop' for project 'etl-project_1'
+2026/10/02 09:16:45 - HopRun - Starting workflow: D:\apache-hop-project\Workflows\03_data_workflow.hwf
+2026/10/02 09:16:45 - 03_data_workflow - Start of workflow execution
+2026/10/02 09:16:45 - 03_data_workflow - Starting action [Start]
+2026/10/02 09:16:45 - 03_data_workflow - Finished action [Start] (result=[true])
+2026/10/02 09:16:45 - 03_data_workflow - Starting action [Checks if files exist]
+2026/10/02 09:16:46 - 03_data_workflow - Finished action [Checks if files exist] (result=[true])
+2026/10/02 09:16:46 - 03_data_workflow - Starting action [01_drive_staging.hpl]
+2026/10/02 09:16:46 - 01_drive_staging.hpl - Using run configuration [local]
+2026/10/02 09:16:46 - 01_drive_staging - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
+2026/10/02 09:16:46 - 01_drive_staging - Execution started for pipeline [01_drive_staging]
+2026/10/02 09:16:47 - staging_product.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 09:16:47 - staging_orders.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 09:16:47 - staging_customer.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 09:16:48 - product_excel.0 - Finished processing (I=10, O=0, R=0, W=10, U=0, E=0)
+2026/10/02 09:16:48 - customer_excel.0 - Finished processing (I=11, O=0, R=0, W=11, U=0, E=0)
+2026/10/02 09:16:48 - Filter rows 2.0 - Finished processing (I=0, O=0, R=10, W=9, U=0, E=0)
+2026/10/02 09:16:48 - Filter rows.0 - Finished processing (I=0, O=0, R=11, W=11, U=0, E=0)
+2026/10/02 09:16:48 - Orders_excel.0 - Finished processing (I=16, O=0, R=0, W=16, U=0, E=0)
+2026/10/02 09:16:48 - data_error.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2026/10/02 09:16:48 - data_clean 2.0 - Finished processing (I=0, O=0, R=9, W=9, U=0, E=0)
+2026/10/02 09:16:48 - data_clean.0 - Finished processing (I=0, O=0, R=10, W=10, U=0, E=0)
+2026/10/02 09:16:48 - Filter rows 2 2.0 - Finished processing (I=0, O=0, R=16, W=16, U=0, E=0)
+2026/10/02 09:16:48 - data_clean 2 2.0 - Finished processing (I=0, O=0, R=16, W=16, U=0, E=0)
+2026/10/02 09:16:48 - staging_customer.0 - Finished processing (I=0, O=10, R=10, W=10, U=0, E=0)
+2026/10/02 09:16:48 - staging_product.0 - Finished processing (I=0, O=9, R=9, W=9, U=0, E=0)
+2026/10/02 09:16:48 - staging_orders.0 - Finished processing (I=0, O=16, R=16, W=16, U=0, E=0)
+2026/10/02 09:16:48 - 01_drive_staging - Pipeline duration : 2.138 seconds [  2.138" ]
+2026/10/02 09:16:48 - 03_data_workflow - Finished action [01_drive_staging.hpl] (result=[true])
+2026/10/02 09:16:48 - 01_drive_staging - Execution finished on a local pipeline engine with run configuration 'local'
+2026/10/02 09:16:48 - 03_data_workflow - Starting action [02_db_staging.hpl]
+2026/10/02 09:16:48 - 02_db_staging.hpl - Using run configuration [local]
+2026/10/02 09:16:48 - 02_db_staging - Executing this pipeline using the Local Pipeline Engine with run configuration 'local'
+2026/10/02 09:16:48 - 02_db_staging - Execution started for pipeline [02_db_staging]
+2026/10/02 09:16:49 - clean_orders.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 09:16:49 - clean_product.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 09:16:49 - clean_customer.0 - Connected to database [Staging_db] (commit=1000)
+2026/10/02 09:16:49 - input_orders.0 - Finished reading query, closing connection.
+2026/10/02 09:16:49 - input_product.0 - Finished reading query, closing connection.
+2026/10/02 09:16:49 - input_customer.0 - Finished reading query, closing connection.
+2026/10/02 09:16:49 - input_orders.0 - Finished processing (I=16, O=0, R=0, W=16, U=0, E=0)
+2026/10/02 09:16:49 - input_customer.0 - Finished processing (I=10, O=0, R=0, W=10, U=0, E=0)
+2026/10/02 09:16:49 - input_product.0 - Finished processing (I=9, O=0, R=0, W=9, U=0, E=0)
+2026/10/02 09:16:49 - filter_email.0 - Finished processing (I=0, O=0, R=10, W=10, U=0, E=0)
+2026/10/02 09:16:49 - log_emaii.0 - 
+2026/10/02 09:16:49 - log_emaii.0 - ------------> Linenr 1------------------------------
+2026/10/02 09:16:49 - log_emaii.0 - [ERROR] - Phat hien khach hang co dinh dang email khong dung
+2026/10/02 09:16:49 - log_emaii.0 - 
+2026/10/02 09:16:49 - log_emaii.0 - customerid = C002
+2026/10/02 09:16:49 - log_emaii.0 - fullname = Bob Jones
+2026/10/02 09:16:49 - log_emaii.0 - email = bob.example.com
+2026/10/02 09:16:49 - log_emaii.0 - phone = 555-0102
+2026/10/02 09:16:49 - log_emaii.0 - age = 34
+2026/10/02 09:16:49 - log_emaii.0 - 
+2026/10/02 09:16:49 - log_emaii.0 - ====================
+2026/10/02 09:16:49 - log_emaii.0 - 
+2026/10/02 09:16:49 - log_emaii.0 - ------------> Linenr 2------------------------------
+2026/10/02 09:16:49 - log_emaii.0 - [ERROR] - Phat hien khach hang co dinh dang email khong dung
+2026/10/02 09:16:49 - log_emaii.0 - 
+2026/10/02 09:16:49 - log_emaii.0 - customerid = c1
+2026/10/02 09:16:49 - log_emaii.0 - fullname = duong
+2026/10/02 09:16:49 - log_emaii.0 - email = duonggmail.com
+2026/10/02 09:16:49 - log_emaii.0 - phone = 111-1111
+2026/10/02 09:16:49 - log_emaii.0 - age = 20
+2026/10/02 09:16:49 - log_emaii.0 - 
+2026/10/02 09:16:49 - log_emaii.0 - ====================
+2026/10/02 09:16:49 - log_age.0 - 
+2026/10/02 09:16:49 - log_age.0 - ------------> Linenr 1------------------------------
+2026/10/02 09:16:49 - log_age.0 - [ERROR]- Phat hien khach hang co tuoi khong hop le!
+
+2026/10/02 09:16:49 - log_age.0 - 
+2026/10/02 09:16:49 - log_age.0 - customerid = C005
+2026/10/02 09:16:49 - log_age.0 - fullname = Eve Davis
+2026/10/02 09:16:49 - log_age.0 - email = eve@example.com
+2026/10/02 09:16:49 - log_age.0 - phone = 555-0105
+2026/10/02 09:16:49 - log_age.0 - age = -5
+2026/10/02 09:16:49 - log_age.0 - 
+2026/10/02 09:16:49 - log_age.0 - ====================
+2026/10/02 09:16:49 - filter_quantity.0 - Finished processing (I=0, O=0, R=16, W=16, U=0, E=0)
+2026/10/02 09:16:49 - log_customer.0 - 
+2026/10/02 09:16:49 - log_customer.0 - ------------> Linenr 1------------------------------
+2026/10/02 09:16:49 - log_customer.0 - [ERROR] - Phat hien khach hang co ma dinh danh trung nhau
+2026/10/02 09:16:49 - log_customer.0 - 
+2026/10/02 09:16:49 - log_customer.0 - customerid = C001
+2026/10/02 09:16:49 - log_customer.0 - fullname = Grace Lee
+2026/10/02 09:16:49 - log_customer.0 - email = grace@example.com
+2026/10/02 09:16:49 - log_customer.0 - phone = 555-0107
+2026/10/02 09:16:49 - log_customer.0 - age = 29
+2026/10/02 09:16:49 - log_customer.0 - error_row = 1
+2026/10/02 09:16:49 - log_customer.0 - error_description = null
+2026/10/02 09:16:49 - log_customer.0 - error_code = UNRH001
+2026/10/02 09:16:49 - log_customer.0 - 
+2026/10/02 09:16:49 - log_customer.0 - ====================
+2026/10/02 09:16:49 - log_quantity.0 - 
+2026/10/02 09:16:49 - log_quantity.0 - ------------> Linenr 1------------------------------
+2026/10/02 09:16:49 - log_quantity.0 - [ERROR] - Phat hien don hang sai dinh dang so luong 
+2026/10/02 09:16:49 - log_quantity.0 - 
+2026/10/02 09:16:49 - log_quantity.0 - orderid = O005
+2026/10/02 09:16:49 - log_quantity.0 - customerid = C005
+2026/10/02 09:16:49 - log_quantity.0 - productid = P008
+2026/10/02 09:16:49 - log_quantity.0 - orderdate = 2023/01/19 00:00:00.000
+2026/10/02 09:16:49 - log_quantity.0 - quantity = -2
+2026/10/02 09:16:49 - log_quantity.0 - totalamount = -120,0
+2026/10/02 09:16:49 - log_quantity.0 - 
+2026/10/02 09:16:49 - log_quantity.0 - ====================
+2026/10/02 09:16:49 - log_quantity.0 - 
+2026/10/02 09:16:49 - log_quantity.0 - ------------> Linenr 2------------------------------
+2026/10/02 09:16:49 - log_quantity.0 - [ERROR] - Phat hien don hang sai dinh dang so luong 
+2026/10/02 09:16:49 - log_quantity.0 - 
+2026/10/02 09:16:49 - log_quantity.0 - orderid = O013
+2026/10/02 09:16:49 - log_quantity.0 - customerid = C004
+2026/10/02 09:16:49 - log_quantity.0 - productid = P009
+2026/10/02 09:16:49 - log_quantity.0 - orderdate = 2023/01/27 00:00:00.000
+2026/10/02 09:16:49 - log_quantity.0 - quantity = 0
+2026/10/02 09:16:49 - log_quantity.0 - totalamount = 0,0
+2026/10/02 09:16:49 - log_quantity.0 - 
+2026/10/02 09:16:49 - log_quantity.0 - ====================
+2026/10/02 09:16:49 - filter_age.0 - Finished processing (I=0, O=0, R=8, W=8, U=0, E=0)
+2026/10/02 09:16:49 - log_emaii.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2026/10/02 09:16:49 - Unique rows (HashSet) 2.0 - Finished processing (I=0, O=0, R=7, W=6, U=0, E=2)
+2026/10/02 09:16:49 - log_age.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2026/10/02 09:16:49 - log_customer.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2026/10/02 09:16:49 - Calculator.0 - Finished processing (I=0, O=0, R=9, W=9, U=0, E=0)
+2026/10/02 09:16:49 - log_quantity.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2026/10/02 09:16:49 - Select values 2.0 - ERROR: 
+2026/10/02 09:16:49 - Select values 2.0 - 
+2026/10/02 09:16:49 - Select values 2.0 - orderdate String(50) : couldn't convert string [32/13/2026] to a date using format [yyyy/MM/dd] on offset location 10
+2026/10/02 09:16:49 - Select values 2.0 - 32/13/2026
+2026/10/02 09:16:49 - log_date.0 - 
+2026/10/02 09:16:49 - log_date.0 - ------------> Linenr 1------------------------------
+2026/10/02 09:16:49 - log_date.0 - [ERROR] - Phat hien don hang co dinh dang ngay thang khong hop le!
+2026/10/02 09:16:49 - log_date.0 - 
+2026/10/02 09:16:49 - log_date.0 - orderid = O002
+2026/10/02 09:16:49 - log_date.0 - customerid = C002
+2026/10/02 09:16:49 - log_date.0 - productid = P003
+2026/10/02 09:16:49 - log_date.0 - orderdate = 32/13/2026
+2026/10/02 09:16:49 - log_date.0 - quantity = 2
+2026/10/02 09:16:49 - log_date.0 - totalamount = 90,0
+2026/10/02 09:16:49 - log_date.0 - error_row = 1
+2026/10/02 09:16:49 - log_date.0 - error_description = 
+2026/10/02 09:16:49 - log_date.0 - 
+2026/10/02 09:16:49 - log_date.0 - orderdate String(50) : couldn't convert string [32/13/2026] to a date using format [yyyy/MM/dd] on offset location 10
+2026/10/02 09:16:49 - log_date.0 - 32/13/2026
+2026/10/02 09:16:49 - log_date.0 - 
+2026/10/02 09:16:49 - log_date.0 - 
+2026/10/02 09:16:49 - log_date.0 - error_code = SELECT001
+2026/10/02 09:16:49 - log_date.0 - 
+2026/10/02 09:16:49 - log_date.0 - ====================
+2026/10/02 09:16:49 - Select values 2.0 - ERROR: 
+2026/10/02 09:16:49 - Select values 2.0 - 
+2026/10/02 09:16:49 - Select values 2.0 - orderdate String(50) : couldn't convert string [2023-02-29] to a date using format [yyyy/MM/dd] on offset location 4
+2026/10/02 09:16:49 - Select values 2.0 - 2023-02-29
+2026/10/02 09:16:49 - log_date.0 - 
+2026/10/02 09:16:49 - log_date.0 - ------------> Linenr 2------------------------------
+2026/10/02 09:16:49 - log_date.0 - [ERROR] - Phat hien don hang co dinh dang ngay thang khong hop le!
+2026/10/02 09:16:49 - log_date.0 - 
+2026/10/02 09:16:49 - log_date.0 - orderid = c1
+2026/10/02 09:16:49 - log_date.0 - customerid = c01
+2026/10/02 09:16:49 - log_date.0 - productid = P011
+2026/10/02 09:16:49 - log_date.0 - orderdate = 2023-02-29
+2026/10/02 09:16:49 - log_date.0 - quantity = 2
+2026/10/02 09:16:49 - log_date.0 - totalamount = 300,0
+2026/10/02 09:16:49 - log_date.0 - error_row = 1
+2026/10/02 09:16:49 - log_date.0 - error_description = 
+2026/10/02 09:16:49 - log_date.0 - 
+2026/10/02 09:16:49 - log_date.0 - orderdate String(50) : couldn't convert string [2023-02-29] to a date using format [yyyy/MM/dd] on offset location 4
+2026/10/02 09:16:49 - log_date.0 - 2023-02-29
+2026/10/02 09:16:49 - log_date.0 - 
+2026/10/02 09:16:49 - log_date.0 - 
+2026/10/02 09:16:49 - log_date.0 - error_code = SELECT001
+2026/10/02 09:16:49 - log_date.0 - 
+2026/10/02 09:16:49 - log_date.0 - ====================
+2026/10/02 09:16:49 - log_product.0 - 
+2026/10/02 09:16:49 - log_product.0 - ------------> Linenr 1------------------------------
+2026/10/02 09:16:49 - log_product.0 - [ERROR] - Phat hien don hang co truong du lieu trung nhau
+
+2026/10/02 09:16:49 - log_product.0 - 
+2026/10/02 09:16:49 - log_product.0 - productid = P001
+2026/10/02 09:16:49 - log_product.0 - productname = Monitor
+2026/10/02 09:16:49 - log_product.0 - category = Electronics
+2026/10/02 09:16:49 - log_product.0 - price = 300,0
+2026/10/02 09:16:49 - log_product.0 - error_row = 1
+2026/10/02 09:16:49 - log_product.0 - error_description = null
+2026/10/02 09:16:49 - log_product.0 - error_code = UNRH001
+2026/10/02 09:16:49 - log_product.0 - 
+2026/10/02 09:16:49 - log_product.0 - ====================
+2026/10/02 09:16:49 - Select values 2.0 - Finished processing (I=0, O=0, R=14, W=12, U=0, E=2)
+2026/10/02 09:16:49 - Select values.0 - Finished processing (I=0, O=0, R=9, W=9, U=0, E=0)
+2026/10/02 09:16:49 - log_date.0 - Finished processing (I=0, O=0, R=2, W=2, U=0, E=0)
+2026/10/02 09:16:49 - clean_customer.0 - Finished processing (I=0, O=6, R=6, W=6, U=0, E=0)
+2026/10/02 09:16:49 - Unique rows (HashSet).0 - Finished processing (I=0, O=0, R=9, W=8, U=0, E=2)
+2026/10/02 09:16:49 - log_product.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2026/10/02 09:16:49 - clean_orders.0 - Finished processing (I=0, O=12, R=12, W=12, U=0, E=0)
+2026/10/02 09:16:49 - clean_product.0 - Finished processing (I=0, O=8, R=8, W=8, U=0, E=0)
+2026/10/02 09:16:49 - 02_db_staging - Pipeline duration : 0.21 seconds [  0.210" ]
+2026/10/02 09:16:49 - 02_db_staging - Execution finished on a local pipeline engine with run configuration 'local'
+2026/10/02 09:16:49 - 03_data_workflow - Finished action [02_db_staging.hpl] (result=[true])
+2026/10/02 09:16:49 - 03_data_workflow - Starting action [Success]
+2026/10/02 09:16:49 - 03_data_workflow - Finished action [Success] (result=[true])
+2026/10/02 09:16:49 - 03_data_workflow - Workflow execution finished
+2026/10/02 09:16:49 - 03_data_workflow - Workflow duration : 3.96 seconds [  3.960" ]
+HopRun exit.
