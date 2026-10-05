@@ -6,6 +6,18 @@
   "autoExportMetadataFilename" : "metadata.json",
   "parentProjectName" : "default",
   "config" : {
-    "variables" : [ ]
+    "variables" : [ {
+      "name" : "DB_HOST",
+      "value" : "localhost"
+    }, {
+      "name" : "DB_PORT",
+      "value" : "5432"
+    }, {
+      "name" : "DB_USER",
+      "value" : "postgres"
+    }, {
+      "name" : "DB_PASS",
+      "value" : "1234"
+    } ]
   }
 }
