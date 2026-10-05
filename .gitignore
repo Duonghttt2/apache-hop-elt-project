@@ -1,2 +1,3 @@
 Config/drive_api_key.json
 Config/tokens/
+.env

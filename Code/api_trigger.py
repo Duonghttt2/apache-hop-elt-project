@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, jsonify
 import subprocess
 
@@ -24,6 +26,17 @@ def trigger_etl():
             "status": "error",
             "message": "Failed to trigger ETL process"
         })
+    
+from apscheduler.schedulers.background import BackgroundScheduler # type: ignore
+
+def scheduled_job():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    bat_file_path = os.path.join(os.path.dirname(current_dir), 'Scheduling', 'etl_auto.bat')
+    subprocess.Popen(bat_file_path, shell=True)
+
+scheduler = BackgroundScheduler()
+scheduler.add_job(func=scheduled_job, trigger="interval", minutes=60) # Chạy định kỳ 60 phút
+scheduler.start()
 if __name__ == '__main__':
     # chạy server ở cổng 5000
     app.run(host='0.0.0.0', port=5000)
